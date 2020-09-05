@@ -99,6 +99,12 @@ class Compte
     private $type;
 
     /**
+     * One compte has many frais_bancaire. This is the inverse side.
+     * @ORM\OneToMany(targetEntity="FraisBancaire", mappedBy="compte")
+     */
+    private $frai_bancaire;
+
+    /**
      * @var \ClientMoral
      *
      * @ORM\ManyToOne(targetEntity="ClientMoral")
@@ -107,6 +113,12 @@ class Compte
      * })
      */
     private $clttmoral;
+
+    /**
+     * One product has many features. This is the inverse side.
+     * @ORM\OneToMany(targetEntity="Transaction", mappedBy="compte")
+     */
+    private $transaction;
 
     /**
      * Compte constructor.
@@ -264,7 +276,7 @@ class Compte
     /**
      * @return \ClientPhysique
      */
-    public function getCltphysique(): \ClientPhysique
+    public function getCltphysique()
     {
         return $this->cltphysique;
     }
@@ -272,7 +284,7 @@ class Compte
     /**
      * @param \ClientPhysique $cltphysique
      */
-    public function setCltphysique(\ClientPhysique $cltphysique): void
+    public function setCltphysique( $cltphysique)
     {
         $this->cltphysique = $cltphysique;
     }
@@ -280,7 +292,7 @@ class Compte
     /**
      * @return \TypeCompte
      */
-    public function getType(): \TypeCompte
+    public function getType()
     {
         return $this->type;
     }
@@ -288,7 +300,7 @@ class Compte
     /**
      * @param \TypeCompte $type
      */
-    public function setType(\TypeCompte $type): void
+    public function setType($type)
     {
         $this->type = $type;
     }
@@ -296,7 +308,7 @@ class Compte
     /**
      * @return \ClientMoral
      */
-    public function getClttmoral(): \ClientMoral
+    public function getClttmoral()
     {
         return $this->clttmoral;
     }
@@ -304,9 +316,41 @@ class Compte
     /**
      * @param \ClientMoral $clttmoral
      */
-    public function setClttmoral(\ClientMoral $clttmoral): void
+    public function setClttmoral($clttmoral)
     {
         $this->clttmoral = $clttmoral;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getFraiBancaire(): ArrayCollection
+    {
+        return $this->frai_bancaire;
+    }
+
+    /**
+     * @param ArrayCollection $frai_bancaire
+     */
+    public function setFraiBancaire(ArrayCollection $frai_bancaire): void
+    {
+        $this->frai_bancaire = $frai_bancaire;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getTransaction()
+    {
+        return $this->transaction;
+    }
+
+    /**
+     * @param ArrayCollection $transaction
+     */
+    public function setTransaction($transaction)
+    {
+        $this->transaction = $transaction;
     }
 
 

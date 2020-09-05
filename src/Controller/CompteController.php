@@ -68,32 +68,32 @@ class CompteController extends AbstractController
             $retour["data"]["dateCreation"]=$cmpte[0]->getDateCreation();
             $retour["data"]["dateFermeture"]=$cmpte[0]->getDateFermeture();
             $retour["data"]["dateFermTempo"]=$cmpte[0]->getDateFerTempo();
-            $retour["data"]["type"]=$cmpte[0]->getTypeCompte()->getLibelle();
+            $retour["data"]["type"]=$cmpte[0]->getType()->getLibelle();
             $retour["data"]["dateFermTempo"]=$cmpte[0]->getDateFerTempo();
             $retour["data"]["dateReouverture"]=$cmpte[0]->getDateReouverture();
 
-            if($cmpte[0]->getClientPhysique()!=null)
+            if($cmpte[0]->getCltphysique()!=null)
             {
-                $tabCP["id"]=$cmpte[0]->getClientPhysique()->getId();
-                $tabCP["nom"]=$cmpte[0]->getClientPhysique()->getNom();
-                $tabCP["prenom"]=$cmpte[0]->getClientPhysique()->getPrenom();
-                $tabCP["telephone"]=$cmpte[0]->getClientPhysique()->getTelephone();
-                $tabCP["salaire"]=$cmpte[0]->getClientPhysique()->getSalaire();
-                $tabCP["adresse"]=$cmpte[0]->getClientPhysique()->getAdresse();
-                $tabCP["email"]=$cmpte[0]->getClientPhysique()->getEmail();
-                $tabCP["profession"]=$cmpte[0]->getClientPhysique()->getProfession();
+                $tabCP["id"]=$cmpte[0]->getCltphysique()->getId();
+                $tabCP["nom"]=$cmpte[0]->getCltphysique()->getNom();
+                $tabCP["prenom"]=$cmpte[0]->getCltphysique()->getPrenom();
+                $tabCP["telephone"]=$cmpte[0]->getCltphysique()->getTelephone();
+                $tabCP["salaire"]=$cmpte[0]->getCltphysique()->getSalaire();
+                $tabCP["adresse"]=$cmpte[0]->getCltphysique()->getAdresse();
+                $tabCP["email"]=$cmpte[0]->getCltphysique()->getEmail();
+                $tabCP["profession"]=$cmpte[0]->getCltphysique()->getProfession();
                 $retour["data"]["clientPhysique"]=$tabCP;
                 $retour["data"]["clientMoral"]=null;
             }
             else
             {
-                $tabCM["id"]=$cmpte[0]->getClientMoral()->getId();
-                $tabCM["nom"]=$cmpte[0]->getClientMoral()->getNom();
-                $tabCM["raisonSocial"]=$cmpte[0]->getClientMoral()->getRaisonsocial();
-                $tabCM["adresse"]=$cmpte[0]->getClientMoral()->getAdresse();
-                $tabCM["ninea"]=$cmpte[0]->getClientMoral()->getNumIdentifiant();
-                $tabCM["telephone"]=$cmpte[0]->getClientMoral()->getTelephone();
-                $tabCM["email"]=$cmpte[0]->getClientMoral()->getEmail();
+                $tabCM["id"]=$cmpte[0]->getClttmoral()->getId();
+                $tabCM["nom"]=$cmpte[0]->getClttmoral()->getNom();
+                $tabCM["raisonSocial"]=$cmpte[0]->getClttmoral()->getRaisonsocial();
+                $tabCM["adresse"]=$cmpte[0]->getClttmoral()->getAdresse();
+                $tabCM["ninea"]=$cmpte[0]->getClttmoral()->getNumIdentifiant();
+                $tabCM["telephone"]=$cmpte[0]->getClttmoral()->getTelephone();
+                $tabCM["email"]=$cmpte[0]->getClttmoral()->getEmail();
                 $retour["data"]["clientMoral"]=$tabCM;
                 $retour["data"]["clientPhysique"]=null;
             }
@@ -112,7 +112,8 @@ class CompteController extends AbstractController
                 $retour["data"]["list_transaction"]=$tabListTransac;
             }
 
-            dd(json_encode($retour));
+            echo(json_encode($retour));
+            dd();
 
         }
         return $this->json([

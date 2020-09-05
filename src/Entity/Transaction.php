@@ -113,7 +113,7 @@ class Transaction
     /**
      * @return \TypeTransaction
      */
-    public function getType(): \TypeTransaction
+    public function getType()
     {
         return $this->type;
     }
@@ -121,7 +121,7 @@ class Transaction
     /**
      * @param \TypeTransaction $type
      */
-    public function setType(\TypeTransaction $type): void
+    public function setType($type)
     {
         $this->type = $type;
     }

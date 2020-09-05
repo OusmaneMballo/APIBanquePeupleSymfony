@@ -299,7 +299,7 @@ class ClientPhysique
     /**
      * @return \ClientMoral
      */
-    public function getEmployeur(): \ClientMoral
+    public function getEmployeur()
     {
         return $this->employeur;
     }
@@ -307,7 +307,7 @@ class ClientPhysique
     /**
      * @param \ClientMoral $employeur
      */
-    public function setEmployeur(\ClientMoral $employeur): void
+    public function setEmployeur($employeur)
     {
         $this->employeur = $employeur;
     }
@@ -315,7 +315,7 @@ class ClientPhysique
     /**
      * @return \TypeClient
      */
-    public function getTypeclient(): \TypeClient
+    public function getTypeclient()
     {
         return $this->typeclient;
     }
@@ -323,7 +323,7 @@ class ClientPhysique
     /**
      * @param \TypeClient $typeclient
      */
-    public function setTypeclient(\TypeClient $typeclient): void
+    public function setTypeclient($typeclient)
     {
         $this->typeclient = $typeclient;
     }
