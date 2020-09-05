@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -106,6 +107,207 @@ class Compte
      * })
      */
     private $clttmoral;
+
+    /**
+     * Compte constructor.
+     */
+    public function __construct()
+    {
+        $this->frai_bancaire=new ArrayCollection();
+        $this->transaction=new ArrayCollection();
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNumero(): string
+    {
+        return $this->numero;
+    }
+
+    /**
+     * @param string $numero
+     */
+    public function setNumero(string $numero): void
+    {
+        $this->numero = $numero;
+    }
+
+    /**
+     * @return string
+     */
+    public function getClerip(): string
+    {
+        return $this->clerip;
+    }
+
+    /**
+     * @param string $clerip
+     */
+    public function setClerip(string $clerip): void
+    {
+        $this->clerip = $clerip;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSolde(): int
+    {
+        return $this->solde;
+    }
+
+    /**
+     * @param int $solde
+     */
+    public function setSolde(int $solde): void
+    {
+        $this->solde = $solde;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEtat(): string
+    {
+        return $this->etat;
+    }
+
+    /**
+     * @param string $etat
+     */
+    public function setEtat(string $etat): void
+    {
+        $this->etat = $etat;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDatecreation(): string
+    {
+        return $this->datecreation;
+    }
+
+    /**
+     * @param string $datecreation
+     */
+    public function setDatecreation(string $datecreation): void
+    {
+        $this->datecreation = $datecreation;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDatefermeture(): string
+    {
+        return $this->datefermeture;
+    }
+
+    /**
+     * @param string $datefermeture
+     */
+    public function setDatefermeture(string $datefermeture): void
+    {
+        $this->datefermeture = $datefermeture;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDatefertempo(): string
+    {
+        return $this->datefertempo;
+    }
+
+    /**
+     * @param string $datefertempo
+     */
+    public function setDatefertempo(string $datefertempo): void
+    {
+        $this->datefertempo = $datefertempo;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDatereouverture(): string
+    {
+        return $this->datereouverture;
+    }
+
+    /**
+     * @param string $datereouverture
+     */
+    public function setDatereouverture(string $datereouverture): void
+    {
+        $this->datereouverture = $datereouverture;
+    }
+
+    /**
+     * @return \ClientPhysique
+     */
+    public function getCltphysique(): \ClientPhysique
+    {
+        return $this->cltphysique;
+    }
+
+    /**
+     * @param \ClientPhysique $cltphysique
+     */
+    public function setCltphysique(\ClientPhysique $cltphysique): void
+    {
+        $this->cltphysique = $cltphysique;
+    }
+
+    /**
+     * @return \TypeCompte
+     */
+    public function getType(): \TypeCompte
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param \TypeCompte $type
+     */
+    public function setType(\TypeCompte $type): void
+    {
+        $this->type = $type;
+    }
+
+    /**
+     * @return \ClientMoral
+     */
+    public function getClttmoral(): \ClientMoral
+    {
+        return $this->clttmoral;
+    }
+
+    /**
+     * @param \ClientMoral $clttmoral
+     */
+    public function setClttmoral(\ClientMoral $clttmoral): void
+    {
+        $this->clttmoral = $clttmoral;
+    }
 
 
 }

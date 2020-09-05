@@ -55,5 +55,92 @@ class FraisBancaire
      */
     private $compte;
 
+    /**
+     * FraisBancaire constructor.
+     */
+    public function __construct()
+    {
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return int
+     */
+    public function getFrai(): int
+    {
+        return $this->frai;
+    }
+
+    /**
+     * @param int $frai
+     */
+    public function setFrai(int $frai): void
+    {
+        $this->frai = $frai;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDate(): string
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param string $date
+     */
+    public function setDate(string $date): void
+    {
+        $this->date = $date;
+    }
+
+    /**
+     * @return \TypeFrais
+     */
+    public function getTypefrai(): \TypeFrais
+    {
+        return $this->typefrai;
+    }
+
+    /**
+     * @param \TypeFrais $typefrai
+     */
+    public function setTypefrai(\TypeFrais $typefrai): void
+    {
+        $this->typefrai = $typefrai;
+    }
+
+    /**
+     * @return \Compte
+     */
+    public function getCompte(): \Compte
+    {
+        return $this->compte;
+    }
+
+    /**
+     * @param \Compte $compte
+     */
+    public function setCompte(\Compte $compte): void
+    {
+        $this->compte = $compte;
+    }
+
 
 }

@@ -55,5 +55,92 @@ class Transaction
      */
     private $compte;
 
+    /**
+     * Transaction constructor.
+     */
+    public function __construct()
+    {
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMontant(): string
+    {
+        return $this->montant;
+    }
+
+    /**
+     * @param string $montant
+     */
+    public function setMontant(string $montant): void
+    {
+        $this->montant = $montant;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDate(): string
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param string $date
+     */
+    public function setDate(string $date): void
+    {
+        $this->date = $date;
+    }
+
+    /**
+     * @return \TypeTransaction
+     */
+    public function getType(): \TypeTransaction
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param \TypeTransaction $type
+     */
+    public function setType(\TypeTransaction $type): void
+    {
+        $this->type = $type;
+    }
+
+    /**
+     * @return \Compte
+     */
+    public function getCompte(): \Compte
+    {
+        return $this->compte;
+    }
+
+    /**
+     * @param \Compte $compte
+     */
+    public function setCompte(\Compte $compte): void
+    {
+        $this->compte = $compte;
+    }
+
 
 }

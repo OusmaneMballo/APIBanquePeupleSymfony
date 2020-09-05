@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -110,6 +111,222 @@ class ClientPhysique
      * })
      */
     private $typeclient;
+
+    /**
+     * ClientPhysique constructor.
+     */
+    public function __construct()
+    {
+        $this->compte=new  ArrayCollection();
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNom(): string
+    {
+        return $this->nom;
+    }
+
+    /**
+     * @param string $nom
+     */
+    public function setNom(string $nom): void
+    {
+        $this->nom = $nom;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPrenom(): string
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * @param string $prenom
+     */
+    public function setPrenom(string $prenom): void
+    {
+        $this->prenom = $prenom;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTelephone(): string
+    {
+        return $this->telephone;
+    }
+
+    /**
+     * @param string $telephone
+     */
+    public function setTelephone(string $telephone): void
+    {
+        $this->telephone = $telephone;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSalaire(): int
+    {
+        return $this->salaire;
+    }
+
+    /**
+     * @param int $salaire
+     */
+    public function setSalaire(int $salaire): void
+    {
+        $this->salaire = $salaire;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAdresse(): string
+    {
+        return $this->adresse;
+    }
+
+    /**
+     * @param string $adresse
+     */
+    public function setAdresse(string $adresse): void
+    {
+        $this->adresse = $adresse;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail(string $email): void
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLogin(): string
+    {
+        return $this->login;
+    }
+
+    /**
+     * @param string $login
+     */
+    public function setLogin(string $login): void
+    {
+        $this->login = $login;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPasswd(): string
+    {
+        return $this->passwd;
+    }
+
+    /**
+     * @param string $passwd
+     */
+    public function setPasswd(string $passwd): void
+    {
+        $this->passwd = $passwd;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProfession(): string
+    {
+        return $this->profession;
+    }
+
+    /**
+     * @param string $profession
+     */
+    public function setProfession(string $profession): void
+    {
+        $this->profession = $profession;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNci(): string
+    {
+        return $this->nci;
+    }
+
+    /**
+     * @param string $nci
+     */
+    public function setNci(string $nci): void
+    {
+        $this->nci = $nci;
+    }
+
+    /**
+     * @return \ClientMoral
+     */
+    public function getEmployeur(): \ClientMoral
+    {
+        return $this->employeur;
+    }
+
+    /**
+     * @param \ClientMoral $employeur
+     */
+    public function setEmployeur(\ClientMoral $employeur): void
+    {
+        $this->employeur = $employeur;
+    }
+
+    /**
+     * @return \TypeClient
+     */
+    public function getTypeclient(): \TypeClient
+    {
+        return $this->typeclient;
+    }
+
+    /**
+     * @param \TypeClient $typeclient
+     */
+    public function setTypeclient(\TypeClient $typeclient): void
+    {
+        $this->typeclient = $typeclient;
+    }
 
 
 }
